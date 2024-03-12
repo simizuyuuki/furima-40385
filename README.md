@@ -11,13 +11,12 @@
 | nickname           | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
-| date_of_birth      | deta   | null: false |
+| date_of_birth      | date   | null: false |
 
 ### Association
 
 - has_many :items
-- has_many :shipping
-- has_many :record
+- has_many :recordes
 
 ## items テーブル
 
@@ -25,22 +24,22 @@
 | ------      | ------ | ----------- |
 | name        | string | null: false |
 | description | text   | null: false |
-| category    | string | null: false |
-| situation   | string | null: false |
-| charge      | string | null: false |
-| source      | string | null: false |
-| number      | string | null: false |
-| price       | string | null: false |
-| user        | string | null: false, foreign_key: ture|
+| category    | integer| null: false |
+| situation   | integer| null: false |
+| charge      | integer| null: false |
+| source      | integer| null: false |
+| number      | integer| null: false |
+| price       | integer| null: false |
+| user        | references| null: false, foreign_key: true|
 
 
 ### Association
 
 - belongs_to :users
-- has_many :shipping
-- has_many :recod
+- has_many :shippings
+- has_many :recods
 
-## shipping テーブル
+## shippings テーブル
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
@@ -53,22 +52,21 @@
 | addres           | string     | null: false                    |
 | building         | string     | null: true                     |
 | telephone        | string     | null: false                    |
-| record           | regerenses | null: false,  foreign_key: ture| 
+| record           | references | null: false,  foreign_key: true| 
 
 ### Association
 
-- belongs_to :users
 - belongs_to :shipping
 - belongs_to :recod
 
-# record テーブル
+# records テーブル
 
 | Column          | Type       | Options                        |
 | ------          | ---------- | ------------------------------ |
 | item            | references | null: false,  foreign_key: true|
-| user            | referenses | null: false,  foreign_key: true|
+| user            | references | null: false,  foreign_key: true|
 
-- belongs_to :users
-- belongs_to :items
-- has_many   :shipping
+- belongs_to :user
+- belongs_to :item
+- has_one    :shipping
 
