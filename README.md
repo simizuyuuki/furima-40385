@@ -4,11 +4,14 @@
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-| name               | string | null: false |
+| first_name         | string | null: false |
+| last_name          | string | null: false |
+| first_hurigana     | string | null: false |
+| last_hurigana      | string | null: false |
 | nickname           | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
-| date_of_birth      | string | null: false |
+| date_of_birth      | deta   | null: false |
 
 ### Association
 
@@ -69,15 +72,3 @@
 - belongs_to :items
 - has_many   :shipping
 
-
-<!--record テーブル  -->
- |   user_id  | item_id  |
- |      1     |     1    |
- |      2     |     2    |
- |      1     |     3    |
-
-<!-- item_id 1 -->
- item.record  => record id: 1, user_id: 1, item_id: 1, created_at: 00000, updated_at: 00000
- <!-- item_id 6 -->
- item.record => []
- item.record.id => undifind method 'id' for nil:NilClass
