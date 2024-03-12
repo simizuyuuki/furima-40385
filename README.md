@@ -16,48 +16,43 @@
 ### Association
 
 - has_many :items
-- has_many :recordes
+- has_many :records
 
 ## items テーブル
 
-| Column      | Type   | Options     |
-| ------      | ------ | ----------- |
-| name        | string | null: false |
-| description | text   | null: false |
-| category    | integer| null: false |
-| situation   | integer| null: false |
-| charge      | integer| null: false |
-| source      | integer| null: false |
-| number      | integer| null: false |
-| price       | integer| null: false |
-| user        | references| null: false, foreign_key: true|
+| Column         | Type   | Options     |
+| ------         | ------ | ----------- |
+| name           | string | null: false |
+| description    | text   | null: false |
+| category_id    | integer| null: false |
+| situation_id   | integer| null: false |
+| charge_id      | integer| null: false |
+| source_id      | integer| null: false |
+| number_id      | integer| null: false |
+| price          | integer| null: false |
+| user           | references| null: false, foreign_key: true|
 
 
 ### Association
 
-- belongs_to :users
-- has_many :shippings
-- has_many :recods
+- has_one :record
+- belong_to :user
 
-## shippings テーブル
+## ship_addresses テーブル
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
-| creadit_number   | string     | null: false                    |
-| creadit_expiry   | string     | null: false                    |
-| creadit_security | string     | null: false                    |
 | post_code        | string     | null: false                    |
 | prefectur        | string     | null: false                    |
-| municipaliti     | string     | null: false                    |
-| addres           | string     | null: false                    |
-| building         | string     | null: true                     |
+| address          | string     | null: false                    |
+| building         | string     |                                |
 | telephone        | string     | null: false                    |
 | record           | references | null: false,  foreign_key: true| 
 
 ### Association
 
-- belongs_to :shipping
-- belongs_to :recod
+- belongs_to :ship_address
+- belongs_to :record
 
 # records テーブル
 
@@ -68,5 +63,5 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one    :shipping
+- has_one    :ship_address
 

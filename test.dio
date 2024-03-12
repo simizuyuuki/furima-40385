@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="nuK60SEaYBQowQ5L0JVI" name="ページ1">
-        <mxGraphModel dx="1045" dy="1156" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1081" dy="1430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -16,10 +16,10 @@
                 <mxCell id="75" value="name&#10;description&#10;category&#10;situation&#10;charge&#10;source&#10;number&#10;price&#10;user" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="38">
                     <mxGeometry y="26" width="160" height="144" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" value="shipping table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                <mxCell id="43" value="ship_addresses table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
                     <mxGeometry x="260" y="660" width="160" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="creadit_number&#10;creadit_expiry&#10;creadit_security&#10;post_code&#10;prefectur&#10;municipaliti&#10;addres&#10;bilding&#10;telephone&#10;irecord" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="43">
+                <mxCell id="44" value="post_code&#10;prefectur&#10;addres&#10;bilding&#10;telephone&#10;irecord" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="43">
                     <mxGeometry y="26" width="160" height="204" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="record table " style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
@@ -37,7 +37,7 @@
                 <mxCell id="66" value="1" style="resizable=0;html=1;align=right;verticalAlign=bottom;sketch=1;curveFitting=1;jiggle=2;" connectable="0" vertex="1" parent="65">
                     <mxGeometry x="1" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="" style="endArrow=none;html=1;rounded=0;exitX=0.533;exitY=0.974;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.563;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;sketch=1;curveFitting=1;jiggle=2;startArrow=ERoneToMany;startFill=0;" edge="1" parent="1" source="62" target="38">
+                <mxCell id="67" value="" style="endArrow=none;html=1;rounded=0;exitX=0.533;exitY=0.974;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.563;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;sketch=1;curveFitting=1;jiggle=2;startArrow=none;startFill=0;" edge="1" parent="1" source="62" target="38">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="440" y="450" as="sourcePoint"/>
                         <mxPoint x="580" y="390" as="targetPoint"/>
@@ -69,15 +69,6 @@
                     <mxGeometry x="1" relative="1" as="geometry">
                         <mxPoint x="-190" y="-30" as="offset"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="78" value="" style="endArrow=none;html=1;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;entryX=0.45;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.019;exitY=0.23;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=ERmany;startFill=0;" edge="1" parent="1" source="44" target="75">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="460" y="680" as="sourcePoint"/>
-                        <mxPoint x="620" y="680" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="79" value="1" style="resizable=0;html=1;align=right;verticalAlign=bottom;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" connectable="0" vertex="1" parent="78">
-                    <mxGeometry x="1" relative="1" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
