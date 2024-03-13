@@ -27,7 +27,7 @@
 | category_id    | integer| null: false |
 | situation_id   | integer| null: false |
 | charge_id      | integer| null: false |
-| source_id      | integer| null: false |
+| prefectur_id   | integer| null: false |
 | number_id      | integer| null: false |
 | price          | integer| null: false |
 | user           | references| null: false, foreign_key: true|
@@ -36,22 +36,22 @@
 ### Association
 
 - has_one :record
-- belong_to :user
+- belongs_to :user
 
 ## ship_addresses テーブル
 
-| Column           | Type       | Options                        |
-| ------           | ---------- | ------------------------------ |
-| post_code        | string     | null: false                    |
-| prefectur        | string     | null: false                    |
-| address          | string     | null: false                    |
-| building         | string     |                                |
-| telephone        | string     | null: false                    |
-| record           | references | null: false,  foreign_key: true| 
+| Column           | Type        | Options                        |
+| ------           | ----------  | ------------------------------ |
+| post_code        | string      | null: false                    |
+| prefectur_id     | integer     | null: false                    |
+| municipalities   | string      | null: false
+| address          | string      | null: false                    |
+| building         | string      |                                |
+| telephone        | string      | null: false                    |
+| record           | references  | null: false,  foreign_key: true| 
 
 ### Association
 
-- belongs_to :ship_address
 - belongs_to :record
 
 # records テーブル
