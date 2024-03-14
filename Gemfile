@@ -79,6 +79,12 @@ group :production do
   gem 'pg'
 end
 
+<<<<<<< Updated upstream
 group :production do
   gem 'pg'
 end
+=======
+gem 'devise'
+
+gem 'pry-rails'
+>>>>>>> Stashed changes
