@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       it 'first_nameは半角では登録できない' do
         @user.first_name = 'a'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name can't be blank")
+        expect(@user.errors.full_messages).to include("First name is invalid")
       end
 
       it 'last_nameが空では登録できない' do
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
       it 'last_nameは半角では登録できない' do
         @user.last_name = 'a'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name can't be blank")
+        expect(@user.errors.full_messages).to include("Last name is invalid")
       end
 
       it 'first_huriganaが空では登録できない' do
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
       it 'first_huriganaは全角カタカナ以外は登録できない' do
         @user.first_hurigana = 'あ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First hurigana can't be blank")
+        expect(@user.errors.full_messages).to include("First hurigana is invalid")
       end
 
       it 'last_huriganaが空では登録できない' do
@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
       it 'last_huriganaは全角カタカナ以外は登録できない' do
         @user.last_hurigana = 'あ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last hurigana can't be blank")
+        expect(@user.errors.full_messages).to include("Last hurigana is invalid")
       end
 
       it 'nicknameが空では登録できない' do
