@@ -66,14 +66,4 @@
 - belongs_to :item
 - has_one    :ship_address
 
-=======
-## Tabel名
-
-|Column|Type|Options|
-|------|----|-------|
-
-
-
-### Association
-（ここに追記していく）
->>>>>>> Stashed changes
+#○○_idはアクティブハッシュ用
