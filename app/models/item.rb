@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :situation
   belongs_to :prefectur
   belongs_to :number
-  belongs_to :change
+  belongs_to :charge
   
   validates :name, presence: true
   validates :description, presence: true

@@ -8,4 +8,6 @@ class Situation< ActiveHash:: Base
     {id: 6, situation: '傷や汚れあり'},
     {id: 7, situation: '全体的に状態が悪い'},
   ]
+  include ActiveHash::Associations
+  has_many :items
 end
