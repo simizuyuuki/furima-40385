@@ -12,13 +12,14 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_15_115436) do
   create_table "items", charset: "utf8", force: :cascade do |t|
+    t.text "image", null: false
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "category", null: false
-    t.integer "situation", null: false
-    t.integer "charge", null: false
-    t.integer "prefectur", null: false
-    t.integer "number"
+    t.integer "category_id", null: false
+    t.integer "situation_id", null: false
+    t.integer "charge_id", null: false
+    t.integer "prefectur_id", null: false
+    t.integer "number_id"
     t.integer "price", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
