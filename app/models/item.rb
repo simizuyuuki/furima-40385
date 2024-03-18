@@ -6,16 +6,13 @@ class Item < ApplicationRecord
   belongs_to :number
   belongs_to :charge
 
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :image, presence: true
-  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :situation_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :charge_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :prefectur_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :number_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
-  validates_format_of :price, with: /\A[0-9]+\z/, message: 'は半角数字のみです'
+  has_one_attached :image
+
+  validates :name, :description, :image, presence: true
+  validates :category_id, :situation_id, :charge_id, :prefectur_id, :number_id,
+            numericality: { other_than: 1, message: "can't be blank" }
+  validates :price, presence: true,
+                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 
   belongs_to :user
 end

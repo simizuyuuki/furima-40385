@@ -1,12 +1,10 @@
 FactoryBot.define do
   factory :user do
-    # user factoryの定義
   end
 
   factory :item do
     name { Faker::Lorem.sentence }
     description { Faker::Lorem.sentence }
-    image { Faker::Internet.url }
     category_id { 2 }
     situation_id { 2 }
     charge_id { 2 }
@@ -15,5 +13,8 @@ FactoryBot.define do
     price { 500 }
 
     association :user
+    after(:build) do |message|
+      message.image.attach(io: File.open('public/images/logo.png.png'), filename: 'logo.png.png')
+    end
   end
 end

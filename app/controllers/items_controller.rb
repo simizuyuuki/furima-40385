@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :edit]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :authenticate_user!, only: [:new, :create] # :update, :destroy, :edit]
 
   def index
   end
@@ -20,14 +19,8 @@ class ItemsController < ApplicationController
 
   private
 
-  def move_to_index
-    return if user_signed_in?
-
-    redirect_to new_user_session_path
-  end
-
   def item_params
     params.require(:item).permit(:name, :description, :image, :category_id, :situation_id, :charge_id, :prefectur_id, :number_id,
-                                 :price, :user)
+                                 :price)
   end
 end
