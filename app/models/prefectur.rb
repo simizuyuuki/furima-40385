@@ -1,6 +1,6 @@
-class Prefectur< ActiveHash:: Base
+class Prefectur < ActiveHash::Base
   self.data = [
-    { id: 1, prefectur: '---'},
+    { id: 1, prefectur: '---' },
     { id: 2, prefectur: '北海道' },
     { id: 3, prefectur: '青森県' },
     { id: 4, prefectur: '岩手県' },
