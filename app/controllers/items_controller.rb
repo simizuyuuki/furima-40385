@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] # :update, :destroy, :edit]
 
   def index
+   @items = Item.all
   end
 
   def new
@@ -17,6 +18,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+    unless @item.user == current_user
+      redirect_to root_path
+    end
+  end
+  
   private
 
   def item_params
