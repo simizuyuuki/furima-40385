@@ -5,4 +5,3 @@ class RecordController < ApplicationController
     end
   end
 end
-

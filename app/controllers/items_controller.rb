@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] # :update, :destroy, :edit]
 
   def index
-   @items = Item.all
+    @items = Item.all
   end
 
   def new
@@ -26,11 +26,11 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    unless @item.user == current_user
-      redirect_to root_path
-    end
+    return if @item.user == current_user
+
+    redirect_to root_path
   end
-  
+
   private
 
   def item_params
