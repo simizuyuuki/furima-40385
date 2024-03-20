@@ -23,8 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    return unless @item.user == current_user
     @item.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: 'Item was successfully deleted.'
   end
 
   def edit
