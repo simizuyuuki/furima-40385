@@ -20,16 +20,20 @@ class ItemsController < ApplicationController
   end
 
   def show
+    return unless @item.record.present?
+
+    redirect_to root_path
   end
 
   def destroy
     return unless @item.user == current_user
+
     @item.destroy
     redirect_to root_path, notice: 'Item was successfully deleted.'
   end
 
   def edit
-    return if @item.user == current_user
+    return unless @item.user != current_user || @item.record.present?
 
     redirect_to root_path
   end

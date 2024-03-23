@@ -1,6 +1,6 @@
 class RecordShipAddress
-  include ActiveModel::Model 
-  attr_accessor :user_id, :item_id, :post_code, :prefectur_id, :municipalities, :address, :telephone
+  include ActiveModel::Model
+  attr_accessor :user_id, :item_id, :post_code, :prefectur_id, :municipalities, :building, :address, :telephone, :token
 
   with_options presence: true do
     validates :user_id
@@ -12,9 +12,9 @@ class RecordShipAddress
     validates :telephone, presence: true, format: { with: /\A\d{10,11}\z/ }
     validates :token, presence: true
   end
-    def save
-      record = Record.create(user_id: user_id, item_id: item_id)
-      Ship_address.create(post_code: post_code, prefectur_id: prefectur_id, municipalities: municipalities, address: address, telephone: telephone)
-    end
-  
+  def save
+    record = Record.create(user_id:, item_id:)
+    ShipAddress.create(post_code:, prefectur_id:, municipalities:, address:, telephone:,
+                       record_id: record.id)
+  end
 end
