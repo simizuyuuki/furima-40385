@@ -9,8 +9,8 @@ class RecordShipAddress
     validates :prefectur_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :municipalities
     validates :address
-    validates :telephone, presence: true, format: { with: /\A\d{10,11}\z/ }
-    validates :token, presence: true
+    validates :telephone, format: { with: /\A\d{10,11}\z/ }
+    validates :token
   end
   def save
     record = Record.create(user_id:, item_id:)
