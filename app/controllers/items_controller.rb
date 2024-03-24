@@ -20,9 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    return unless @item.record.present?
-
-    redirect_to root_path
+    
   end
 
   def destroy
