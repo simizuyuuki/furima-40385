@@ -1,14 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :find_item, only: [:index, :create]
-
+  
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @record_ship_address = RecordShipAddress.new
-
-    if current_user != @item.user
-      redirect_to root_path
-      return
+    if @item.user == current_user or @item.record != nil
+    redirect_to root_path, notice: 'Item was successfully deleted.'
     end
   end
 
