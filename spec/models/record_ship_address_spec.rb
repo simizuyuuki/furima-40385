@@ -54,14 +54,14 @@ RSpec.describe RecordShipAddress, type: :model do
     end
 
     it '発送元の地域が選択されていない場合は保存されない' do
-      @record_ship_address.prefectur_id = nil
+      @record_ship_address.prefecture_id = nil
       @record_ship_address.valid?
-      expect(@record_ship_address.errors.full_messages).to include("Prefectur can't be blank")
+      expect(@record_ship_address.errors.full_messages).to include("Prefecture can't be blank")
     end
     it '都道府県は---登録できない' do
-      @record_ship_address.prefectur_id = 1
+      @record_ship_address.prefecture_id = 1
       @record_ship_address.valid?
-      expect(@record_ship_address.errors.full_messages).to include("Prefectur can't be blank")
+      expect(@record_ship_address.errors.full_messages).to include("Prefecture can't be blank")
     end
 
 

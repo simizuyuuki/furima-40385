@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_051945) do
     t.integer "category_id", null: false
     t.integer "situation_id", null: false
     t.integer "charge_id", null: false
-    t.integer "prefectur_id", null: false
+    t.integer "prefecture_id", null: false
     t.integer "number_id", null: false
     t.integer "price", null: false
     t.bigint "user_id", null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_051945) do
 
   create_table "ship_addresses", charset: "utf8", force: :cascade do |t|
     t.string "post_code", null: false
-    t.integer "prefectur_id", null: false
+    t.integer "prefecture_id", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
     t.string "building"

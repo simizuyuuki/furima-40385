@@ -73,15 +73,15 @@ RSpec.describe Item, type: :model do
       end
 
       it '発送元の地域が選択されていない場合は保存されない' do
-        @item.prefectur_id = nil
+        @item.prefecture_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectur can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
 
-      it 'prefectur_idが1(---)の場合は保存できない' do
-        @item.prefectur_id = 1
+      it 'prefecture_idが1(---)の場合は保存できない' do
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectur can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
 
       it '発送までの日数が選択されていない場合は保存されない' do

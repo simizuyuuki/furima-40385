@@ -2,7 +2,7 @@ class CreateShipAddresses < ActiveRecord::Migration[7.0]
   def change
     create_table :ship_addresses do |t|
       t.string :post_code, null: false
-      t.integer :prefectur_id, null: false
+      t.integer :prefecture_id, null: false
       t.string :municipalities, null: false
       t.string :address, null: false
       t.string :building
